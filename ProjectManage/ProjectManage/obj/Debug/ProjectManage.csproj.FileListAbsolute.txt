@@ -1,0 +1,11 @@
+D:\University Project\ProjectManage\ProjectManage\bin\Debug\ProjectManage.exe.config
+D:\University Project\ProjectManage\ProjectManage\bin\Debug\ProjectManage.exe
+D:\University Project\ProjectManage\ProjectManage\bin\Debug\ProjectManage.pdb
+D:\University Project\ProjectManage\ProjectManage\obj\Debug\ProjectManage.csprojResolveAssemblyReference.cache
+D:\University Project\ProjectManage\ProjectManage\obj\Debug\ProjectManage.Properties.Resources.resources
+D:\University Project\ProjectManage\ProjectManage\obj\Debug\ProjectManage.csproj.GenerateResource.Cache
+D:\University Project\ProjectManage\ProjectManage\obj\Debug\ProjectManage.exe
+D:\University Project\ProjectManage\ProjectManage\obj\Debug\ProjectManage.pdb
+D:\University Project\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormCayTrong.resources
+D:\University Project\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormMain.resources
+D:\University Project\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormVatNuoi.resources
