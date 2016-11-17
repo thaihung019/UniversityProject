@@ -9,3 +9,15 @@ D:\University Project\ProjectManage\ProjectManage\obj\Debug\ProjectManage.pdb
 D:\University Project\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormCayTrong.resources
 D:\University Project\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormMain.resources
 D:\University Project\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormVatNuoi.resources
+D:\UniversityProject\ProjectManage\ProjectManage\bin\Debug\ProjectManage.exe.config
+D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.exe
+D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.pdb
+D:\UniversityProject\ProjectManage\ProjectManage\bin\Debug\ProjectManage.exe
+D:\UniversityProject\ProjectManage\ProjectManage\bin\Debug\ProjectManage.pdb
+D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.csprojResolveAssemblyReference.cache
+D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormCayTrong.resources
+D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormLogin.resources
+D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormMain.resources
+D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormVatNuoi.resources
+D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.Properties.Resources.resources
+D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.csproj.GenerateResource.Cache
