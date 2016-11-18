@@ -92,8 +92,10 @@
             // 
             // FormLogin
             // 
+            this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnThoats;
             this.ClientSize = new System.Drawing.Size(284, 123);
             this.Controls.Add(this.btnThoats);
             this.Controls.Add(this.btnDangNhap);
