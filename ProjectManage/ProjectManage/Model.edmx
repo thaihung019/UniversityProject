@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QUANLYVATNUOICAYTRONGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BENH">
+          <Key>
+            <PropertyRef Name="IDBENH" />
+          </Key>
+          <Property Name="IDBENH" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="TENBENH" Type="nvarchar" MaxLength="50" />
+          <Property Name="DAUHIEU" Type="nvarchar" MaxLength="500" />
+          <Property Name="PHONGBENH" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="CHI_PHI_DOI_TUONG">
+          <Key>
+            <PropertyRef Name="IDDOITUONG" />
+            <PropertyRef Name="IDNCC" />
+          </Key>
+          <Property Name="IDDOITUONG" Type="int" Nullable="false" />
+          <Property Name="IDNCC" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" />
+          <Property Name="GIA_1CON" Type="int" />
+        </EntityType>
+        <EntityType Name="CHI_PHI_THUC_PHAN">
+          <Key>
+            <PropertyRef Name="IDLOAI" />
+            <PropertyRef Name="IDNCC" />
+          </Key>
+          <Property Name="IDLOAI" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="IDNCC" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" />
+          <Property Name="GIA_1KG" Type="int" />
+        </EntityType>
+        <EntityType Name="DOI_TUONG">
+          <Key>
+            <PropertyRef Name="IDDOITUONG" />
+          </Key>
+          <Property Name="IDDOITUONG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENDOITUONG" Type="nvarchar" MaxLength="20" />
+          <Property Name="IDKHUVUC" Type="char" MaxLength="5" />
+          <Property Name="IDLOAIDOITUONG" Type="char" MaxLength="5" />
+          <Property Name="NGAYNHAP" Type="date" />
+          <Property Name="NGAYXUAT" Type="date" />
+        </EntityType>
+        <EntityType Name="KHU_VUC">
+          <Key>
+            <PropertyRef Name="IDKHUVUC" />
+          </Key>
+          <Property Name="IDKHUVUC" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="TENKHUVUC" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="LOAI_DOI_TUONG">
+          <Key>
+            <PropertyRef Name="IDLOAIDOITUONG" />
+          </Key>
+          <Property Name="IDLOAIDOITUONG" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="TENLOAIDOITUONG" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="LOAI_THUCAN_PHANBON">
+          <Key>
+            <PropertyRef Name="IDLOAI" />
+          </Key>
+          <Property Name="IDLOAI" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="TENLOAI" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="LUONG_TIEU_THU">
+          <Key>
+            <PropertyRef Name="IDDOITUONG" />
+            <PropertyRef Name="IDLOAI" />
+          </Key>
+          <Property Name="IDDOITUONG" Type="int" Nullable="false" />
+          <Property Name="IDLOAI" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="SOLUONG_1NGAY" Type="int" />
+        </EntityType>
+        <EntityType Name="NGUON_TIEU_THU">
+          <Key>
+            <PropertyRef Name="IDNHATIEUTHU" />
+          </Key>
+          <Property Name="IDNHATIEUTHU" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="TENNHATIEUTHU" Type="nvarchar" MaxLength="20" />
+          <Property Name="SPTHUMUA" Type="nvarchar" MaxLength="20" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
+          <Property Name="SDT" Type="char" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="NHA_CUNG_CAP">
+          <Key>
+            <PropertyRef Name="IDNCC" />
+          </Key>
+          <Property Name="IDNCC" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="TENNCC" Type="nvarchar" MaxLength="20" />
+          <Property Name="TENSPCUNGCAP" Type="nvarchar" MaxLength="20" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
+          <Property Name="SDT" Type="char" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="TINH_TRANG_SUC_KHOE">
+          <Key>
+            <PropertyRef Name="IDDOITUONG" />
+            <PropertyRef Name="IDBENH" />
+          </Key>
+          <Property Name="IDDOITUONG" Type="int" Nullable="false" />
+          <Property Name="IDBENH" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="TINHTRANG" Type="nvarchar" MaxLength="20" />
+          <Property Name="CHIPHICHUATRI" Type="int" />
+        </EntityType>
+        <EntityType Name="THU">
+          <Key>
+            <PropertyRef Name="IDDOITUONG" />
+            <PropertyRef Name="IDNHATIEUTHU" />
+            <PropertyRef Name="IDSANPHAMTIEUTHU" />
+          </Key>
+          <Property Name="IDDOITUONG" Type="int" Nullable="false" />
+          <Property Name="IDNHATIEUTHU" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="IDSANPHAMTIEUTHU" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="TENSANPHAMTIEUTHU" Type="nvarchar" MaxLength="50" />
+          <Property Name="SOLUONG" Type="int" />
+          <Property Name="GIATHANH" Type="int" />
+        </EntityType>
+        <Association Name="FK_CPDT_DT">
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="1" />
+          <End Role="CHI_PHI_DOI_TUONG" Type="Self.CHI_PHI_DOI_TUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOI_TUONG">
+              <PropertyRef Name="IDDOITUONG" />
+            </Principal>
+            <Dependent Role="CHI_PHI_DOI_TUONG">
+              <PropertyRef Name="IDDOITUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPDT_NCC">
+          <End Role="NHA_CUNG_CAP" Type="Self.NHA_CUNG_CAP" Multiplicity="1" />
+          <End Role="CHI_PHI_DOI_TUONG" Type="Self.CHI_PHI_DOI_TUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHA_CUNG_CAP">
+              <PropertyRef Name="IDNCC" />
+            </Principal>
+            <Dependent Role="CHI_PHI_DOI_TUONG">
+              <PropertyRef Name="IDNCC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPTAPB_LOAI">
+          <End Role="LOAI_THUCAN_PHANBON" Type="Self.LOAI_THUCAN_PHANBON" Multiplicity="1" />
+          <End Role="CHI_PHI_THUC_PHAN" Type="Self.CHI_PHI_THUC_PHAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAI_THUCAN_PHANBON">
+              <PropertyRef Name="IDLOAI" />
+            </Principal>
+            <Dependent Role="CHI_PHI_THUC_PHAN">
+              <PropertyRef Name="IDLOAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPTAPB_NCC">
+          <End Role="NHA_CUNG_CAP" Type="Self.NHA_CUNG_CAP" Multiplicity="1" />
+          <End Role="CHI_PHI_THUC_PHAN" Type="Self.CHI_PHI_THUC_PHAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHA_CUNG_CAP">
+              <PropertyRef Name="IDNCC" />
+            </Principal>
+            <Dependent Role="CHI_PHI_THUC_PHAN">
+              <PropertyRef Name="IDNCC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_KV">
+          <End Role="KHU_VUC" Type="Self.KHU_VUC" Multiplicity="0..1" />
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHU_VUC">
+              <PropertyRef Name="IDKHUVUC" />
+            </Principal>
+            <Dependent Role="DOI_TUONG">
+              <PropertyRef Name="IDKHUVUC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_LDT">
+          <End Role="LOAI_DOI_TUONG" Type="Self.LOAI_DOI_TUONG" Multiplicity="0..1" />
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAI_DOI_TUONG">
+              <PropertyRef Name="IDLOAIDOITUONG" />
+            </Principal>
+            <Dependent Role="DOI_TUONG">
+              <PropertyRef Name="IDLOAIDOITUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LTT_DT">
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="1" />
+          <End Role="LUONG_TIEU_THU" Type="Self.LUONG_TIEU_THU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOI_TUONG">
+              <PropertyRef Name="IDDOITUONG" />
+            </Principal>
+            <Dependent Role="LUONG_TIEU_THU">
+              <PropertyRef Name="IDDOITUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LTT_LOAI">
+          <End Role="LOAI_THUCAN_PHANBON" Type="Self.LOAI_THUCAN_PHANBON" Multiplicity="1" />
+          <End Role="LUONG_TIEU_THU" Type="Self.LUONG_TIEU_THU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAI_THUCAN_PHANBON">
+              <PropertyRef Name="IDLOAI" />
+            </Principal>
+            <Dependent Role="LUONG_TIEU_THU">
+              <PropertyRef Name="IDLOAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TTSK_BENH">
+          <End Role="BENH" Type="Self.BENH" Multiplicity="1" />
+          <End Role="TINH_TRANG_SUC_KHOE" Type="Self.TINH_TRANG_SUC_KHOE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BENH">
+              <PropertyRef Name="IDBENH" />
+            </Principal>
+            <Dependent Role="TINH_TRANG_SUC_KHOE">
+              <PropertyRef Name="IDBENH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TTSK_DT">
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="1" />
+          <End Role="TINH_TRANG_SUC_KHOE" Type="Self.TINH_TRANG_SUC_KHOE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOI_TUONG">
+              <PropertyRef Name="IDDOITUONG" />
+            </Principal>
+            <Dependent Role="TINH_TRANG_SUC_KHOE">
+              <PropertyRef Name="IDDOITUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_THU_DT">
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="1" />
+          <End Role="THU" Type="Self.THU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOI_TUONG">
+              <PropertyRef Name="IDDOITUONG" />
+            </Principal>
+            <Dependent Role="THU">
+              <PropertyRef Name="IDDOITUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_THU_TT">
+          <End Role="NGUON_TIEU_THU" Type="Self.NGUON_TIEU_THU" Multiplicity="1" />
+          <End Role="THU" Type="Self.THU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NGUON_TIEU_THU">
+              <PropertyRef Name="IDNHATIEUTHU" />
+            </Principal>
+            <Dependent Role="THU">
+              <PropertyRef Name="IDNHATIEUTHU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QUANLYVATNUOICAYTRONGModelStoreContainer">
+          <EntitySet Name="BENH" EntityType="Self.BENH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHI_PHI_DOI_TUONG" EntityType="Self.CHI_PHI_DOI_TUONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHI_PHI_THUC_PHAN" EntityType="Self.CHI_PHI_THUC_PHAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DOI_TUONG" EntityType="Self.DOI_TUONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHU_VUC" EntityType="Self.KHU_VUC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAI_DOI_TUONG" EntityType="Self.LOAI_DOI_TUONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAI_THUCAN_PHANBON" EntityType="Self.LOAI_THUCAN_PHANBON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LUONG_TIEU_THU" EntityType="Self.LUONG_TIEU_THU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NGUON_TIEU_THU" EntityType="Self.NGUON_TIEU_THU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHA_CUNG_CAP" EntityType="Self.NHA_CUNG_CAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TINH_TRANG_SUC_KHOE" EntityType="Self.TINH_TRANG_SUC_KHOE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THU" EntityType="Self.THU" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CPDT_DT" Association="Self.FK_CPDT_DT">
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+            <End Role="CHI_PHI_DOI_TUONG" EntitySet="CHI_PHI_DOI_TUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPDT_NCC" Association="Self.FK_CPDT_NCC">
+            <End Role="NHA_CUNG_CAP" EntitySet="NHA_CUNG_CAP" />
+            <End Role="CHI_PHI_DOI_TUONG" EntitySet="CHI_PHI_DOI_TUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPTAPB_LOAI" Association="Self.FK_CPTAPB_LOAI">
+            <End Role="LOAI_THUCAN_PHANBON" EntitySet="LOAI_THUCAN_PHANBON" />
+            <End Role="CHI_PHI_THUC_PHAN" EntitySet="CHI_PHI_THUC_PHAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPTAPB_NCC" Association="Self.FK_CPTAPB_NCC">
+            <End Role="NHA_CUNG_CAP" EntitySet="NHA_CUNG_CAP" />
+            <End Role="CHI_PHI_THUC_PHAN" EntitySet="CHI_PHI_THUC_PHAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_KV" Association="Self.FK_DT_KV">
+            <End Role="KHU_VUC" EntitySet="KHU_VUC" />
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_LDT" Association="Self.FK_DT_LDT">
+            <End Role="LOAI_DOI_TUONG" EntitySet="LOAI_DOI_TUONG" />
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LTT_DT" Association="Self.FK_LTT_DT">
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+            <End Role="LUONG_TIEU_THU" EntitySet="LUONG_TIEU_THU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LTT_LOAI" Association="Self.FK_LTT_LOAI">
+            <End Role="LOAI_THUCAN_PHANBON" EntitySet="LOAI_THUCAN_PHANBON" />
+            <End Role="LUONG_TIEU_THU" EntitySet="LUONG_TIEU_THU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TTSK_BENH" Association="Self.FK_TTSK_BENH">
+            <End Role="BENH" EntitySet="BENH" />
+            <End Role="TINH_TRANG_SUC_KHOE" EntitySet="TINH_TRANG_SUC_KHOE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TTSK_DT" Association="Self.FK_TTSK_DT">
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+            <End Role="TINH_TRANG_SUC_KHOE" EntitySet="TINH_TRANG_SUC_KHOE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_THU_DT" Association="Self.FK_THU_DT">
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+            <End Role="THU" EntitySet="THU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_THU_TT" Association="Self.FK_THU_TT">
+            <End Role="NGUON_TIEU_THU" EntitySet="NGUON_TIEU_THU" />
+            <End Role="THU" EntitySet="THU" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QUANLYVATNUOICAYTRONGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BENH">
+          <Key>
+            <PropertyRef Name="IDBENH" />
+          </Key>
+          <Property Name="IDBENH" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TENBENH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DAUHIEU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PHONGBENH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TINH_TRANG_SUC_KHOE" Relationship="Self.FK_TTSK_BENH" FromRole="BENH" ToRole="TINH_TRANG_SUC_KHOE" />
+        </EntityType>
+        <EntityType Name="CHI_PHI_DOI_TUONG">
+          <Key>
+            <PropertyRef Name="IDDOITUONG" />
+            <PropertyRef Name="IDNCC" />
+          </Key>
+          <Property Name="IDDOITUONG" Type="Int32" Nullable="false" />
+          <Property Name="IDNCC" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SOLUONG" Type="Int32" />
+          <Property Name="GIA_1CON" Type="Int32" />
+          <NavigationProperty Name="DOI_TUONG" Relationship="Self.FK_CPDT_DT" FromRole="CHI_PHI_DOI_TUONG" ToRole="DOI_TUONG" />
+          <NavigationProperty Name="NHA_CUNG_CAP" Relationship="Self.FK_CPDT_NCC" FromRole="CHI_PHI_DOI_TUONG" ToRole="NHA_CUNG_CAP" />
+        </EntityType>
+        <EntityType Name="CHI_PHI_THUC_PHAN">
+          <Key>
+            <PropertyRef Name="IDLOAI" />
+            <PropertyRef Name="IDNCC" />
+          </Key>
+          <Property Name="IDLOAI" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IDNCC" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SOLUONG" Type="Int32" />
+          <Property Name="GIA_1KG" Type="Int32" />
+          <NavigationProperty Name="LOAI_THUCAN_PHANBON" Relationship="Self.FK_CPTAPB_LOAI" FromRole="CHI_PHI_THUC_PHAN" ToRole="LOAI_THUCAN_PHANBON" />
+          <NavigationProperty Name="NHA_CUNG_CAP" Relationship="Self.FK_CPTAPB_NCC" FromRole="CHI_PHI_THUC_PHAN" ToRole="NHA_CUNG_CAP" />
+        </EntityType>
+        <EntityType Name="DOI_TUONG">
+          <Key>
+            <PropertyRef Name="IDDOITUONG" />
+          </Key>
+          <Property Name="IDDOITUONG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENDOITUONG" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IDKHUVUC" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="IDLOAIDOITUONG" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="NGAYNHAP" Type="DateTime" Precision="0" />
+          <Property Name="NGAYXUAT" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CHI_PHI_DOI_TUONG" Relationship="Self.FK_CPDT_DT" FromRole="DOI_TUONG" ToRole="CHI_PHI_DOI_TUONG" />
+          <NavigationProperty Name="KHU_VUC" Relationship="Self.FK_DT_KV" FromRole="DOI_TUONG" ToRole="KHU_VUC" />
+          <NavigationProperty Name="LOAI_DOI_TUONG" Relationship="Self.FK_DT_LDT" FromRole="DOI_TUONG" ToRole="LOAI_DOI_TUONG" />
+          <NavigationProperty Name="LUONG_TIEU_THU" Relationship="Self.FK_LTT_DT" FromRole="DOI_TUONG" ToRole="LUONG_TIEU_THU" />
+          <NavigationProperty Name="TINH_TRANG_SUC_KHOE" Relationship="Self.FK_TTSK_DT" FromRole="DOI_TUONG" ToRole="TINH_TRANG_SUC_KHOE" />
+          <NavigationProperty Name="THU" Relationship="Self.FK_THU_DT" FromRole="DOI_TUONG" ToRole="THU" />
+        </EntityType>
+        <EntityType Name="KHU_VUC">
+          <Key>
+            <PropertyRef Name="IDKHUVUC" />
+          </Key>
+          <Property Name="IDKHUVUC" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TENKHUVUC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DOI_TUONG" Relationship="Self.FK_DT_KV" FromRole="KHU_VUC" ToRole="DOI_TUONG" />
+        </EntityType>
+        <EntityType Name="LOAI_DOI_TUONG">
+          <Key>
+            <PropertyRef Name="IDLOAIDOITUONG" />
+          </Key>
+          <Property Name="IDLOAIDOITUONG" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TENLOAIDOITUONG" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DOI_TUONG" Relationship="Self.FK_DT_LDT" FromRole="LOAI_DOI_TUONG" ToRole="DOI_TUONG" />
+        </EntityType>
+        <EntityType Name="LOAI_THUCAN_PHANBON">
+          <Key>
+            <PropertyRef Name="IDLOAI" />
+          </Key>
+          <Property Name="IDLOAI" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TENLOAI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CHI_PHI_THUC_PHAN" Relationship="Self.FK_CPTAPB_LOAI" FromRole="LOAI_THUCAN_PHANBON" ToRole="CHI_PHI_THUC_PHAN" />
+          <NavigationProperty Name="LUONG_TIEU_THU" Relationship="Self.FK_LTT_LOAI" FromRole="LOAI_THUCAN_PHANBON" ToRole="LUONG_TIEU_THU" />
+        </EntityType>
+        <EntityType Name="LUONG_TIEU_THU">
+          <Key>
+            <PropertyRef Name="IDDOITUONG" />
+            <PropertyRef Name="IDLOAI" />
+          </Key>
+          <Property Name="IDDOITUONG" Type="Int32" Nullable="false" />
+          <Property Name="IDLOAI" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SOLUONG_1NGAY" Type="Int32" />
+          <NavigationProperty Name="DOI_TUONG" Relationship="Self.FK_LTT_DT" FromRole="LUONG_TIEU_THU" ToRole="DOI_TUONG" />
+          <NavigationProperty Name="LOAI_THUCAN_PHANBON" Relationship="Self.FK_LTT_LOAI" FromRole="LUONG_TIEU_THU" ToRole="LOAI_THUCAN_PHANBON" />
+        </EntityType>
+        <EntityType Name="NGUON_TIEU_THU">
+          <Key>
+            <PropertyRef Name="IDNHATIEUTHU" />
+          </Key>
+          <Property Name="IDNHATIEUTHU" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TENNHATIEUTHU" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SPTHUMUA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="THU" Relationship="Self.FK_THU_TT" FromRole="NGUON_TIEU_THU" ToRole="THU" />
+        </EntityType>
+        <EntityType Name="NHA_CUNG_CAP">
+          <Key>
+            <PropertyRef Name="IDNCC" />
+          </Key>
+          <Property Name="IDNCC" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TENNCC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TENSPCUNGCAP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="CHI_PHI_DOI_TUONG" Relationship="Self.FK_CPDT_NCC" FromRole="NHA_CUNG_CAP" ToRole="CHI_PHI_DOI_TUONG" />
+          <NavigationProperty Name="CHI_PHI_THUC_PHAN" Relationship="Self.FK_CPTAPB_NCC" FromRole="NHA_CUNG_CAP" ToRole="CHI_PHI_THUC_PHAN" />
+        </EntityType>
+        <EntityType Name="TINH_TRANG_SUC_KHOE">
+          <Key>
+            <PropertyRef Name="IDDOITUONG" />
+            <PropertyRef Name="IDBENH" />
+          </Key>
+          <Property Name="IDDOITUONG" Type="Int32" Nullable="false" />
+          <Property Name="IDBENH" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TINHTRANG" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CHIPHICHUATRI" Type="Int32" />
+          <NavigationProperty Name="BENH" Relationship="Self.FK_TTSK_BENH" FromRole="TINH_TRANG_SUC_KHOE" ToRole="BENH" />
+          <NavigationProperty Name="DOI_TUONG" Relationship="Self.FK_TTSK_DT" FromRole="TINH_TRANG_SUC_KHOE" ToRole="DOI_TUONG" />
+        </EntityType>
+        <EntityType Name="THU">
+          <Key>
+            <PropertyRef Name="IDDOITUONG" />
+            <PropertyRef Name="IDNHATIEUTHU" />
+            <PropertyRef Name="IDSANPHAMTIEUTHU" />
+          </Key>
+          <Property Name="IDDOITUONG" Type="Int32" Nullable="false" />
+          <Property Name="IDNHATIEUTHU" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IDSANPHAMTIEUTHU" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TENSANPHAMTIEUTHU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SOLUONG" Type="Int32" />
+          <Property Name="GIATHANH" Type="Int32" />
+          <NavigationProperty Name="DOI_TUONG" Relationship="Self.FK_THU_DT" FromRole="THU" ToRole="DOI_TUONG" />
+          <NavigationProperty Name="NGUON_TIEU_THU" Relationship="Self.FK_THU_TT" FromRole="THU" ToRole="NGUON_TIEU_THU" />
+        </EntityType>
+        <Association Name="FK_TTSK_BENH">
+          <End Role="BENH" Type="Self.BENH" Multiplicity="1" />
+          <End Role="TINH_TRANG_SUC_KHOE" Type="Self.TINH_TRANG_SUC_KHOE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BENH">
+              <PropertyRef Name="IDBENH" />
+            </Principal>
+            <Dependent Role="TINH_TRANG_SUC_KHOE">
+              <PropertyRef Name="IDBENH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPDT_DT">
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="1" />
+          <End Role="CHI_PHI_DOI_TUONG" Type="Self.CHI_PHI_DOI_TUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOI_TUONG">
+              <PropertyRef Name="IDDOITUONG" />
+            </Principal>
+            <Dependent Role="CHI_PHI_DOI_TUONG">
+              <PropertyRef Name="IDDOITUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPDT_NCC">
+          <End Role="NHA_CUNG_CAP" Type="Self.NHA_CUNG_CAP" Multiplicity="1" />
+          <End Role="CHI_PHI_DOI_TUONG" Type="Self.CHI_PHI_DOI_TUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHA_CUNG_CAP">
+              <PropertyRef Name="IDNCC" />
+            </Principal>
+            <Dependent Role="CHI_PHI_DOI_TUONG">
+              <PropertyRef Name="IDNCC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPTAPB_LOAI">
+          <End Role="LOAI_THUCAN_PHANBON" Type="Self.LOAI_THUCAN_PHANBON" Multiplicity="1" />
+          <End Role="CHI_PHI_THUC_PHAN" Type="Self.CHI_PHI_THUC_PHAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAI_THUCAN_PHANBON">
+              <PropertyRef Name="IDLOAI" />
+            </Principal>
+            <Dependent Role="CHI_PHI_THUC_PHAN">
+              <PropertyRef Name="IDLOAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPTAPB_NCC">
+          <End Role="NHA_CUNG_CAP" Type="Self.NHA_CUNG_CAP" Multiplicity="1" />
+          <End Role="CHI_PHI_THUC_PHAN" Type="Self.CHI_PHI_THUC_PHAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHA_CUNG_CAP">
+              <PropertyRef Name="IDNCC" />
+            </Principal>
+            <Dependent Role="CHI_PHI_THUC_PHAN">
+              <PropertyRef Name="IDNCC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_KV">
+          <End Role="KHU_VUC" Type="Self.KHU_VUC" Multiplicity="0..1" />
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHU_VUC">
+              <PropertyRef Name="IDKHUVUC" />
+            </Principal>
+            <Dependent Role="DOI_TUONG">
+              <PropertyRef Name="IDKHUVUC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_LDT">
+          <End Role="LOAI_DOI_TUONG" Type="Self.LOAI_DOI_TUONG" Multiplicity="0..1" />
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAI_DOI_TUONG">
+              <PropertyRef Name="IDLOAIDOITUONG" />
+            </Principal>
+            <Dependent Role="DOI_TUONG">
+              <PropertyRef Name="IDLOAIDOITUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LTT_DT">
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="1" />
+          <End Role="LUONG_TIEU_THU" Type="Self.LUONG_TIEU_THU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOI_TUONG">
+              <PropertyRef Name="IDDOITUONG" />
+            </Principal>
+            <Dependent Role="LUONG_TIEU_THU">
+              <PropertyRef Name="IDDOITUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TTSK_DT">
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="1" />
+          <End Role="TINH_TRANG_SUC_KHOE" Type="Self.TINH_TRANG_SUC_KHOE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOI_TUONG">
+              <PropertyRef Name="IDDOITUONG" />
+            </Principal>
+            <Dependent Role="TINH_TRANG_SUC_KHOE">
+              <PropertyRef Name="IDDOITUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_THU_DT">
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="1" />
+          <End Role="THU" Type="Self.THU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOI_TUONG">
+              <PropertyRef Name="IDDOITUONG" />
+            </Principal>
+            <Dependent Role="THU">
+              <PropertyRef Name="IDDOITUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LTT_LOAI">
+          <End Role="LOAI_THUCAN_PHANBON" Type="Self.LOAI_THUCAN_PHANBON" Multiplicity="1" />
+          <End Role="LUONG_TIEU_THU" Type="Self.LUONG_TIEU_THU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAI_THUCAN_PHANBON">
+              <PropertyRef Name="IDLOAI" />
+            </Principal>
+            <Dependent Role="LUONG_TIEU_THU">
+              <PropertyRef Name="IDLOAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_THU_TT">
+          <End Role="NGUON_TIEU_THU" Type="Self.NGUON_TIEU_THU" Multiplicity="1" />
+          <End Role="THU" Type="Self.THU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NGUON_TIEU_THU">
+              <PropertyRef Name="IDNHATIEUTHU" />
+            </Principal>
+            <Dependent Role="THU">
+              <PropertyRef Name="IDNHATIEUTHU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QUANLYVATNUOICAYTRONGEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BENH" EntityType="Self.BENH" />
+          <EntitySet Name="CHI_PHI_DOI_TUONG" EntityType="Self.CHI_PHI_DOI_TUONG" />
+          <EntitySet Name="CHI_PHI_THUC_PHAN" EntityType="Self.CHI_PHI_THUC_PHAN" />
+          <EntitySet Name="DOI_TUONG" EntityType="Self.DOI_TUONG" />
+          <EntitySet Name="KHU_VUC" EntityType="Self.KHU_VUC" />
+          <EntitySet Name="LOAI_DOI_TUONG" EntityType="Self.LOAI_DOI_TUONG" />
+          <EntitySet Name="LOAI_THUCAN_PHANBON" EntityType="Self.LOAI_THUCAN_PHANBON" />
+          <EntitySet Name="LUONG_TIEU_THU" EntityType="Self.LUONG_TIEU_THU" />
+          <EntitySet Name="NGUON_TIEU_THU" EntityType="Self.NGUON_TIEU_THU" />
+          <EntitySet Name="NHA_CUNG_CAP" EntityType="Self.NHA_CUNG_CAP" />
+          <EntitySet Name="TINH_TRANG_SUC_KHOE" EntityType="Self.TINH_TRANG_SUC_KHOE" />
+          <EntitySet Name="THU" EntityType="Self.THU" />
+          <AssociationSet Name="FK_TTSK_BENH" Association="Self.FK_TTSK_BENH">
+            <End Role="BENH" EntitySet="BENH" />
+            <End Role="TINH_TRANG_SUC_KHOE" EntitySet="TINH_TRANG_SUC_KHOE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPDT_DT" Association="Self.FK_CPDT_DT">
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+            <End Role="CHI_PHI_DOI_TUONG" EntitySet="CHI_PHI_DOI_TUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPDT_NCC" Association="Self.FK_CPDT_NCC">
+            <End Role="NHA_CUNG_CAP" EntitySet="NHA_CUNG_CAP" />
+            <End Role="CHI_PHI_DOI_TUONG" EntitySet="CHI_PHI_DOI_TUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPTAPB_LOAI" Association="Self.FK_CPTAPB_LOAI">
+            <End Role="LOAI_THUCAN_PHANBON" EntitySet="LOAI_THUCAN_PHANBON" />
+            <End Role="CHI_PHI_THUC_PHAN" EntitySet="CHI_PHI_THUC_PHAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPTAPB_NCC" Association="Self.FK_CPTAPB_NCC">
+            <End Role="NHA_CUNG_CAP" EntitySet="NHA_CUNG_CAP" />
+            <End Role="CHI_PHI_THUC_PHAN" EntitySet="CHI_PHI_THUC_PHAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_KV" Association="Self.FK_DT_KV">
+            <End Role="KHU_VUC" EntitySet="KHU_VUC" />
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_LDT" Association="Self.FK_DT_LDT">
+            <End Role="LOAI_DOI_TUONG" EntitySet="LOAI_DOI_TUONG" />
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LTT_DT" Association="Self.FK_LTT_DT">
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+            <End Role="LUONG_TIEU_THU" EntitySet="LUONG_TIEU_THU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TTSK_DT" Association="Self.FK_TTSK_DT">
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+            <End Role="TINH_TRANG_SUC_KHOE" EntitySet="TINH_TRANG_SUC_KHOE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_THU_DT" Association="Self.FK_THU_DT">
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+            <End Role="THU" EntitySet="THU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LTT_LOAI" Association="Self.FK_LTT_LOAI">
+            <End Role="LOAI_THUCAN_PHANBON" EntitySet="LOAI_THUCAN_PHANBON" />
+            <End Role="LUONG_TIEU_THU" EntitySet="LUONG_TIEU_THU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_THU_TT" Association="Self.FK_THU_TT">
+            <End Role="NGUON_TIEU_THU" EntitySet="NGUON_TIEU_THU" />
+            <End Role="THU" EntitySet="THU" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QUANLYVATNUOICAYTRONGModelStoreContainer" CdmEntityContainer="QUANLYVATNUOICAYTRONGEntities">
+          <EntitySetMapping Name="BENH">
+            <EntityTypeMapping TypeName="QUANLYVATNUOICAYTRONGModel.BENH">
+              <MappingFragment StoreEntitySet="BENH">
+                <ScalarProperty Name="IDBENH" ColumnName="IDBENH" />
+                <ScalarProperty Name="TENBENH" ColumnName="TENBENH" />
+                <ScalarProperty Name="DAUHIEU" ColumnName="DAUHIEU" />
+                <ScalarProperty Name="PHONGBENH" ColumnName="PHONGBENH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHI_PHI_DOI_TUONG">
+            <EntityTypeMapping TypeName="QUANLYVATNUOICAYTRONGModel.CHI_PHI_DOI_TUONG">
+              <MappingFragment StoreEntitySet="CHI_PHI_DOI_TUONG">
+                <ScalarProperty Name="IDDOITUONG" ColumnName="IDDOITUONG" />
+                <ScalarProperty Name="IDNCC" ColumnName="IDNCC" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="GIA_1CON" ColumnName="GIA_1CON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHI_PHI_THUC_PHAN">
+            <EntityTypeMapping TypeName="QUANLYVATNUOICAYTRONGModel.CHI_PHI_THUC_PHAN">
+              <MappingFragment StoreEntitySet="CHI_PHI_THUC_PHAN">
+                <ScalarProperty Name="IDLOAI" ColumnName="IDLOAI" />
+                <ScalarProperty Name="IDNCC" ColumnName="IDNCC" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="GIA_1KG" ColumnName="GIA_1KG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DOI_TUONG">
+            <EntityTypeMapping TypeName="QUANLYVATNUOICAYTRONGModel.DOI_TUONG">
+              <MappingFragment StoreEntitySet="DOI_TUONG">
+                <ScalarProperty Name="IDDOITUONG" ColumnName="IDDOITUONG" />
+                <ScalarProperty Name="TENDOITUONG" ColumnName="TENDOITUONG" />
+                <ScalarProperty Name="IDKHUVUC" ColumnName="IDKHUVUC" />
+                <ScalarProperty Name="IDLOAIDOITUONG" ColumnName="IDLOAIDOITUONG" />
+                <ScalarProperty Name="NGAYNHAP" ColumnName="NGAYNHAP" />
+                <ScalarProperty Name="NGAYXUAT" ColumnName="NGAYXUAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHU_VUC">
+            <EntityTypeMapping TypeName="QUANLYVATNUOICAYTRONGModel.KHU_VUC">
+              <MappingFragment StoreEntitySet="KHU_VUC">
+                <ScalarProperty Name="IDKHUVUC" ColumnName="IDKHUVUC" />
+                <ScalarProperty Name="TENKHUVUC" ColumnName="TENKHUVUC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAI_DOI_TUONG">
+            <EntityTypeMapping TypeName="QUANLYVATNUOICAYTRONGModel.LOAI_DOI_TUONG">
+              <MappingFragment StoreEntitySet="LOAI_DOI_TUONG">
+                <ScalarProperty Name="IDLOAIDOITUONG" ColumnName="IDLOAIDOITUONG" />
+                <ScalarProperty Name="TENLOAIDOITUONG" ColumnName="TENLOAIDOITUONG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAI_THUCAN_PHANBON">
+            <EntityTypeMapping TypeName="QUANLYVATNUOICAYTRONGModel.LOAI_THUCAN_PHANBON">
+              <MappingFragment StoreEntitySet="LOAI_THUCAN_PHANBON">
+                <ScalarProperty Name="IDLOAI" ColumnName="IDLOAI" />
+                <ScalarProperty Name="TENLOAI" ColumnName="TENLOAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUONG_TIEU_THU">
+            <EntityTypeMapping TypeName="QUANLYVATNUOICAYTRONGModel.LUONG_TIEU_THU">
+              <MappingFragment StoreEntitySet="LUONG_TIEU_THU">
+                <ScalarProperty Name="IDDOITUONG" ColumnName="IDDOITUONG" />
+                <ScalarProperty Name="IDLOAI" ColumnName="IDLOAI" />
+                <ScalarProperty Name="SOLUONG_1NGAY" ColumnName="SOLUONG_1NGAY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NGUON_TIEU_THU">
+            <EntityTypeMapping TypeName="QUANLYVATNUOICAYTRONGModel.NGUON_TIEU_THU">
+              <MappingFragment StoreEntitySet="NGUON_TIEU_THU">
+                <ScalarProperty Name="IDNHATIEUTHU" ColumnName="IDNHATIEUTHU" />
+                <ScalarProperty Name="TENNHATIEUTHU" ColumnName="TENNHATIEUTHU" />
+                <ScalarProperty Name="SPTHUMUA" ColumnName="SPTHUMUA" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHA_CUNG_CAP">
+            <EntityTypeMapping TypeName="QUANLYVATNUOICAYTRONGModel.NHA_CUNG_CAP">
+              <MappingFragment StoreEntitySet="NHA_CUNG_CAP">
+                <ScalarProperty Name="IDNCC" ColumnName="IDNCC" />
+                <ScalarProperty Name="TENNCC" ColumnName="TENNCC" />
+                <ScalarProperty Name="TENSPCUNGCAP" ColumnName="TENSPCUNGCAP" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TINH_TRANG_SUC_KHOE">
+            <EntityTypeMapping TypeName="QUANLYVATNUOICAYTRONGModel.TINH_TRANG_SUC_KHOE">
+              <MappingFragment StoreEntitySet="TINH_TRANG_SUC_KHOE">
+                <ScalarProperty Name="IDDOITUONG" ColumnName="IDDOITUONG" />
+                <ScalarProperty Name="IDBENH" ColumnName="IDBENH" />
+                <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
+                <ScalarProperty Name="CHIPHICHUATRI" ColumnName="CHIPHICHUATRI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THU">
+            <EntityTypeMapping TypeName="QUANLYVATNUOICAYTRONGModel.THU">
+              <MappingFragment StoreEntitySet="THU">
+                <ScalarProperty Name="IDDOITUONG" ColumnName="IDDOITUONG" />
+                <ScalarProperty Name="IDNHATIEUTHU" ColumnName="IDNHATIEUTHU" />
+                <ScalarProperty Name="IDSANPHAMTIEUTHU" ColumnName="IDSANPHAMTIEUTHU" />
+                <ScalarProperty Name="TENSANPHAMTIEUTHU" ColumnName="TENSANPHAMTIEUTHU" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="GIATHANH" ColumnName="GIATHANH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3fd6f431e1f24a318e0d3bdbbf72578f" Name="Diagram1">
+        <EntityTypeShape EntityType="QUANLYVATNUOICAYTRONGModel.BENH" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYVATNUOICAYTRONGModel.CHI_PHI_DOI_TUONG" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYVATNUOICAYTRONGModel.CHI_PHI_THUC_PHAN" Width="1.5" PointX="8.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYVATNUOICAYTRONGModel.DOI_TUONG" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYVATNUOICAYTRONGModel.KHU_VUC" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYVATNUOICAYTRONGModel.LOAI_DOI_TUONG" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYVATNUOICAYTRONGModel.LOAI_THUCAN_PHANBON" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYVATNUOICAYTRONGModel.LUONG_TIEU_THU" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYVATNUOICAYTRONGModel.NGUON_TIEU_THU" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYVATNUOICAYTRONGModel.NHA_CUNG_CAP" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYVATNUOICAYTRONGModel.TINH_TRANG_SUC_KHOE" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYVATNUOICAYTRONGModel.THU" Width="1.5" PointX="8.25" PointY="6.5" IsExpanded="true" />
+        <AssociationConnector Association="QUANLYVATNUOICAYTRONGModel.FK_TTSK_BENH" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYVATNUOICAYTRONGModel.FK_CPDT_DT" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYVATNUOICAYTRONGModel.FK_CPDT_NCC" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYVATNUOICAYTRONGModel.FK_CPTAPB_LOAI" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYVATNUOICAYTRONGModel.FK_CPTAPB_NCC" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYVATNUOICAYTRONGModel.FK_DT_KV" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYVATNUOICAYTRONGModel.FK_DT_LDT" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYVATNUOICAYTRONGModel.FK_LTT_DT" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYVATNUOICAYTRONGModel.FK_TTSK_DT" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYVATNUOICAYTRONGModel.FK_THU_DT" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYVATNUOICAYTRONGModel.FK_LTT_LOAI" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYVATNUOICAYTRONGModel.FK_THU_TT" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

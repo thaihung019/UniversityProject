@@ -49,12 +49,10 @@ namespace ProjectManage
 
         private void buttonVatNuoi_Click(object sender, EventArgs e)
         {
-            Form frm = Application.OpenForms["FormVatNuoi"];
-
-            if (frm == null) frm = new FormVatNuoi();
-            frm.Show();
-
+            Form_VatNuoi formVatNuoi = new Form_VatNuoi();
             this.Hide();
+            formVatNuoi.Show();
+
         }
 
         private void label1_Click_2(object sender, EventArgs e)

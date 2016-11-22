@@ -18,6 +18,11 @@ D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.csprojR
 D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormCayTrong.resources
 D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormLogin.resources
 D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormMain.resources
-D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormVatNuoi.resources
 D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.Properties.Resources.resources
 D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.csproj.GenerateResource.Cache
+D:\UniversityProject\ProjectManage\ProjectManage\bin\Debug\EntityFramework.dll
+D:\UniversityProject\ProjectManage\ProjectManage\bin\Debug\EntityFramework.xml
+D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormLoiNhuan.resources
+D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormNguonTieuThu.resources
+D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.FormNhaCungCap.resources
+D:\UniversityProject\ProjectManage\ProjectManage\obj\Debug\ProjectManage.Form_VatNuoi.resources

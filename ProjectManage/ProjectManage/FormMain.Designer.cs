@@ -36,6 +36,17 @@
             this.buttonNgTT = new System.Windows.Forms.Button();
             this.buttonNCC = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripHome = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLoiNhuan = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripNhacungcap = new System.Windows.Forms.ToolStripButton();
+            this.toolStripNguontieuthu = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -123,6 +134,99 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label1.Click += new System.EventHandler(this.label1_Click_2);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(50, 50);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripHome,
+            this.toolStripSeparator1,
+            this.toolStripLoiNhuan,
+            this.toolStripSeparator2,
+            this.toolStripNhacungcap,
+            this.toolStripNguontieuthu,
+            this.toolStripSeparator3,
+            this.toolStripButton1,
+            this.toolStripButton2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1264, 50);
+            this.toolStrip1.TabIndex = 4;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripHome
+            // 
+            this.toolStripHome.AutoSize = false;
+            this.toolStripHome.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripHome.Image = ((System.Drawing.Image)(resources.GetObject("toolStripHome.Image")));
+            this.toolStripHome.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripHome.Margin = new System.Windows.Forms.Padding(2);
+            this.toolStripHome.Name = "toolStripHome";
+            this.toolStripHome.Size = new System.Drawing.Size(50, 50);
+            this.toolStripHome.Text = "Home";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 50);
+            // 
+            // toolStripLoiNhuan
+            // 
+            this.toolStripLoiNhuan.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripLoiNhuan.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLoiNhuan.Image")));
+            this.toolStripLoiNhuan.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripLoiNhuan.Name = "toolStripLoiNhuan";
+            this.toolStripLoiNhuan.Size = new System.Drawing.Size(54, 47);
+            this.toolStripLoiNhuan.Text = "Lợi Nhuận";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 50);
+            // 
+            // toolStripNhacungcap
+            // 
+            this.toolStripNhacungcap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripNhacungcap.Image = ((System.Drawing.Image)(resources.GetObject("toolStripNhacungcap.Image")));
+            this.toolStripNhacungcap.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripNhacungcap.Name = "toolStripNhacungcap";
+            this.toolStripNhacungcap.Size = new System.Drawing.Size(54, 47);
+            this.toolStripNhacungcap.Text = "Nhà Cung Cấp";
+            // 
+            // toolStripNguontieuthu
+            // 
+            this.toolStripNguontieuthu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripNguontieuthu.Image = ((System.Drawing.Image)(resources.GetObject("toolStripNguontieuthu.Image")));
+            this.toolStripNguontieuthu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripNguontieuthu.Name = "toolStripNguontieuthu";
+            this.toolStripNguontieuthu.Size = new System.Drawing.Size(54, 47);
+            this.toolStripNguontieuthu.Text = "Nguồn Tiêu Thụ";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 50);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(54, 47);
+            this.toolStripButton1.Text = "Cây Trồng";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(54, 47);
+            this.toolStripButton2.Text = "Vật Nuôi";
+            this.toolStripButton2.Click += new System.EventHandler(this.buttonVatNuoi_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,6 +235,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 729);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonNCC);
             this.Controls.Add(this.buttonNgTT);
@@ -139,10 +244,13 @@
             this.Controls.Add(this.buttonCayTrong);
             this.Controls.Add(this.labelTitle);
             this.HelpButton = true;
+            this.IsMdiContainer = true;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMain";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +265,16 @@
         private System.Windows.Forms.Button buttonNgTT;
         private System.Windows.Forms.Button buttonNCC;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripHome;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripLoiNhuan;
+        private System.Windows.Forms.ToolStripButton toolStripNhacungcap;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripNguontieuthu;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
 
     }
 }
